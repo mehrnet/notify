@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehr Notify | Instant Gateway &amp; RSS Alerts</title>
+  <meta name="description" content="Instant multi-channel notifications for Mehr Gateway crypto payments, invoices, and RSS/Atom feeds delivered directly to Telegram.">
+  <meta name="author" content="Mehrnet">
+  <meta name="theme-color" content="#080c10">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notify.mehrnet.com">
+  <meta property="og:title" content="Mehr Notify | Real-Time Multi-Channel Notification Service">
+  <meta property="og:description" content="Subscribe to on-chain crypto payment events and RSS feeds with instant Telegram alerts.">
+  <meta property="og:site_name" content="Mehr Notify">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-brand" aria-label="Mehr Notify Home">
+        <div class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFC107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-mark">mehr<span class="brand-accent">notify</span></span>
+          <span class="brand-sub">by mehrnet</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#commands" class="nav-link">Commands</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="https://gateway.mehrnet.com" target="_blank" rel="noopener" class="nav-link">Mehr Gateway</a>
+        <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="nav-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.941z"/>
+          </svg>
+          <span>Open Bot</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">⚡ Sub-Second Notification Service</div>
+        <h1 class="hero-title">Instant Alerts for <span>Gateway &amp; Feeds</span></h1>
+        <p class="hero-lead">
+          Connect your Mehr Gateway API token or RSS/Atom feeds to receive instant crypto payment and publishing alerts directly inside Telegram.
+        </p>
+        <div class="hero-actions">
+          <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="primary-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.941z"/>
+            </svg>
+            <span>Start @MehrNotifyBot</span>
+          </a>
+          <a href="#commands" class="secondary-btn">
+            <span>View Commands</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terminal Commands -->
+    <section class="terminal-section" id="commands">
+      <div class="container">
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-title">telegram // @MehrNotifyBot</div>
+            <div style="width: 40px;"></div>
+          </div>
+          <div class="terminal-body">
+            <div class="cmd-group">
+              <span class="cmd-label">Subscribe to Mehr Gateway Account</span>
+              <div class="cmd-row">
+                <code class="cmd-code">
+                  <span class="kw">/gateway</span> 123456789:abcdefghijklmnopqrstuvwxyz
+                </code>
+                <button class="cmd-copy" data-copy="/gateway 123456789:abcdefghijklmnopqrstuvwxyz" title="Copy command">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="cmd-group">
+              <span class="cmd-label">Subscribe to RSS / Atom Feed</span>
+              <div class="cmd-row">
+                <code class="cmd-code">
+                  <span class="kw">/rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
+                </code>
+                <button class="cmd-copy" data-copy="/rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy command">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="cmd-group">
+              <span class="cmd-label">Interactive Prompt Mode</span>
+              <div class="cmd-row">
+                <code class="cmd-code" style="color: #94a3b8;">
+                  Send <span class="kw">/gateway</span> or <span class="kw">/rss</span> alone to enter prompt mode with <span style="color:#ef4444;">/cancel</span>
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Core Capabilities</span>
+          <h2 class="section-title">Engineered for Instant Delivery</h2>
+          <p class="section-desc">Reliable notification dispatching built on Cloudflare Workers edge architecture.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">On-Chain Settlement Alerts</h3>
+            <p class="feature-text">Sub-second webhook updates when payments settle on Ethereum, BNB Smart Chain, Solana, TON, and TRON.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 11a9 9 0 0 1 9 9"></path>
+                <path d="M4 4a16 16 0 0 1 16 16"></path>
+                <circle cx="5" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <h3 class="feature-title">RSS &amp; Atom Monitoring</h3>
+            <p class="feature-text">Subscribe to any GitHub release feed, blog, or news channel to receive updates the moment new content drops.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Multi-Target Deduplication</h3>
+            <p class="feature-text">One webhook UUID per service key. Multiple chats and team members can subscribe to the same account seamlessly.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Self-Custodial &amp; Zero-Leak</h3>
+            <p class="feature-text">Automated webhook registration with Mehr Gateway without exposing secret keys or sensitive account data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preview Message -->
+    <section class="preview-section">
+      <div class="container">
+        <div class="preview-wrap">
+          <div class="preview-copy">
+            <span class="preview-badge">Live Preview</span>
+            <h2 class="preview-heading">What You'll Receive in Telegram</h2>
+            <p class="preview-lead">
+              Every on-chain event contains critical details: invoice ID, payable amount, token symbol, customer order ID, and transaction hashes.
+            </p>
+            <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="primary-btn">
+              <span>Try with @MehrNotifyBot</span>
+            </a>
+          </div>
+
+          <div class="tg-bubble-card">
+            <div class="tg-bubble-header">
+              <div class="tg-bot-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <div class="tg-bot-info">
+                <span class="tg-bot-name">Mehr Notify 🔔 مهر نوتیفای</span>
+                <span class="tg-bot-handle">bot</span>
+              </div>
+            </div>
+            <div class="tg-bubble-body">
+              💰 <strong>Payment Received!</strong><br>
+              ━━━━━━━━━━━━━━━━━━━━━<br>
+              🧾 <strong>Invoice:</strong> <code>#1084</code><br>
+              💵 <strong>Amount:</strong> <strong>10.00 USDT</strong><br>
+              🏷️ <strong>Order ID:</strong> <code>order_9981</code><br>
+              📦 <strong>Title:</strong> Store Checkout<br>
+              ⛓️ <strong>Settlement:</strong> BEP20 · BNB Smart Chain<br>
+              🔗 <strong>Tx Hash:</strong> <code>0x9d4a...e12f</code><br><br>
+              👤 <em>Account: root</em>
+            </div>
+            <div class="tg-bubble-footer">
+              <a href="https://gateway.mehrnet.com" target="_blank" rel="noopener" class="tg-bubble-btn">
+                👉 View Invoice Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Steps -->
+    <section class="steps-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Quick Start</span>
+          <h2 class="section-title">Setup in Under 30 Seconds</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Open Telegram Bot</h3>
+            <p class="step-text">Search for <code>@MehrNotifyBot</code> in Telegram or click the Open Bot link.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Send Your Token or Feed</h3>
+            <p class="step-text">Send <code>/gateway &lt;API_KEY&gt;</code> or <code>/rss &lt;URL&gt;</code> directly in chat.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Receive Instant Alerts</h3>
+            <p class="step-text">Our worker automatically configures the webhook and starts dispatching updates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>mehrnotify</strong> · Self-custodial notification service by <a href="https://mehrnet.com" target="_blank" rel="noopener" style="color:var(--text-main);">mehrnet</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://gateway.mehrnet.com" target="_blank" rel="noopener">Mehr Gateway</a>
+        <a href="https://rates.mehrnet.com" target="_blank" rel="noopener">Mehr Rates</a>
+        <a href="https://radar.mehrnet.com" target="_blank" rel="noopener">Mehr Radar</a>
+        <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener">Telegram Bot</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast for Copy -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
