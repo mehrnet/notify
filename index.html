@@ -26,9 +26,8 @@
     <div class="nav-container">
       <a href="/" class="nav-brand" aria-label="Mehr Notify Home">
         <div class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFC107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFC107">
+            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
           </svg>
         </div>
         <div class="brand-text">
@@ -95,9 +94,9 @@
               <span class="cmd-label">Subscribe to Mehr Gateway Account</span>
               <div class="cmd-row">
                 <code class="cmd-code">
-                  <span class="kw">/gateway</span> 123456789:abcdefghijklmnopqrstuvwxyz
+                  <span class="kw">/sub gateway</span> 123456789:abcdefghijklmnopqrstuvwxyz
                 </code>
-                <button class="cmd-copy" data-copy="/gateway 123456789:abcdefghijklmnopqrstuvwxyz" title="Copy command">
+                <button class="cmd-copy" data-copy="/sub gateway 123456789:abcdefghijklmnopqrstuvwxyz" title="Copy command">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -111,9 +110,25 @@
               <span class="cmd-label">Subscribe to RSS / Atom Feed</span>
               <div class="cmd-row">
                 <code class="cmd-code">
-                  <span class="kw">/rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
+                  <span class="kw">/sub rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
                 </code>
-                <button class="cmd-copy" data-copy="/rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy command">
+                <button class="cmd-copy" data-copy="/sub rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy command">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="cmd-group">
+              <span class="cmd-label">Unsubscribe by Type &amp; UUID</span>
+              <div class="cmd-row">
+                <code class="cmd-code">
+                  <span class="kw">/unsub gateway</span> e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d
+                </code>
+                <button class="cmd-copy" data-copy="/unsub gateway e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d" title="Copy command">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -127,7 +142,7 @@
               <span class="cmd-label">Interactive Prompt Mode</span>
               <div class="cmd-row">
                 <code class="cmd-code" style="color: #94a3b8;">
-                  Send <span class="kw">/gateway</span> or <span class="kw">/rss</span> alone to enter prompt mode with <span style="color:#ef4444;">/cancel</span>
+                  Send <span class="kw">/sub gateway</span> alone to enter prompt mode with <span style="color:#ef4444;">/cancel</span>
                 </code>
               </div>
             </div>
