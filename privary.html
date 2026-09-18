@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Mehr Notify</title>
+  <meta name="description" content="Privacy Policy for Mehr Notify - multi-channel notification and event delivery service by Mehrnet.">
+  <meta name="author" content="Mehrnet">
+  <meta name="theme-color" content="#080c10">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://notify.mehrnet.com/privacy">
+  <meta property="og:title" content="Privacy Policy | Mehr Notify">
+  <meta property="og:description" content="Privacy Policy detailing our minimal data collection and self-custodial principles.">
+  <meta property="og:site_name" content="Mehr Notify">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-brand" aria-label="Mehr Notify Home">
+        <div class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFC107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-mark">mehr<span class="brand-accent">notify</span></span>
+          <span class="brand-sub">by mehrnet</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/#commands" class="nav-link">Commands</a>
+        <a href="/#features" class="nav-link">Features</a>
+        <a href="/tos" class="nav-link">Terms</a>
+        <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="nav-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.941z"/>
+          </svg>
+          <span>Open Bot</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="legal-container">
+    <header class="legal-header">
+      <span class="legal-badge">Privacy</span>
+      <h1 class="legal-title">Privacy Policy</h1>
+      <div class="legal-updated">Effective Date: September 18, 2026 &bull; Version 1.0</div>
+    </header>
+
+    <div class="legal-body">
+      <div class="legal-callout">
+        <strong>Privacy by Design:</strong> We collect only the minimum routing data required to transmit the notification events you explicitly subscribe to. We do not sell, monetize, or track your personal information.
+      </div>
+
+      <section class="legal-section">
+        <h2>1. Introduction</h2>
+        <p>
+          Mehrnet ("we", "our", or "us") operates <strong>Mehr Notify</strong> (<code>notify.mehrnet.com</code>, <code>notify-api.mehrnet.com</code>), our Telegram bot (<code>@MehrNotifyBot</code>), our Email notification bot, and our Discord bot integration. This Privacy Policy outlines what information is collected, how it is used, and how you retain control over your data.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. Information We Collect</h2>
+        <p>
+          We only store information necessary to authenticate commands and dispatch notifications to your designated channels:
+        </p>
+        <ul>
+          <li>
+            <strong>Telegram Channel Data:</strong> Telegram User ID, Chat ID, and username. This information is provided automatically by Telegram when you initiate chat or commands with <code>@MehrNotifyBot</code>.
+          </li>
+          <li>
+            <strong>Email Channel Data:</strong> Your email address and sender display name. Used solely to route notification alerts and deliver replies to your email commands.
+          </li>
+          <li>
+            <strong>Discord Channel Data:</strong> Discord Channel ID, User ID, and Server ID. Used to post webhook alerts to your chosen channels.
+          </li>
+          <li>
+            <strong>Subscription Targets:</strong> Mehr Gateway public API tokens, RSS feed URLs, and unique webhook UUID identifiers.
+          </li>
+          <li>
+            <strong>Delivery Logs:</strong> Event delivery timestamps, event types (e.g. <code>invoice.paid</code>), delivery status (delivered/failed), and sanitized error logs. Logs are maintained temporarily for debugging and reliability audits.
+          </li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. What We Never Collect</h2>
+        <p>
+          We adhere to strict self-custodial principles:
+        </p>
+        <ul>
+          <li>We <strong>never</strong> request, store, or have access to private cryptocurrency keys, seed phrases, or fund withdrawal credentials.</li>
+          <li>We <strong>never</strong> use tracking cookies, analytics trackers, or third-party marketing pixels on <code>notify.mehrnet.com</code>.</li>
+          <li>We <strong>never</strong> sell, rent, or trade your contact information with advertisers or data brokers.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>4. How We Use Information</h2>
+        <p>Your information is used exclusively to:</p>
+        <ul>
+          <li>Register webhook endpoints with the Mehr Gateway API for your account.</li>
+          <li>Deliver real-time invoice and payment status alerts to your preferred channel.</li>
+          <li>Process interactive bot commands (e.g. <code>/subscriptions</code>, <code>/unsubscribe</code>).</li>
+          <li>Prevent email bounce loops and maintain service security.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>5. Third-Party Service Providers</h2>
+        <p>
+          To deliver notifications across global infrastructure, we rely on trusted infrastructure providers:
+        </p>
+        <ul>
+          <li><strong>Cloudflare:</strong> Edge compute (Cloudflare Workers) and distributed SQL database (Cloudflare D1). Data is encrypted in transit and at rest.</li>
+          <li><strong>Telegram:</strong> Telegram Bot API for instant message delivery.</li>
+          <li><strong>Discord:</strong> Discord REST and Interactions API for channel notifications.</li>
+          <li><strong>Purelymail:</strong> Encrypted SMTP (port 465 SSL/TLS) for automated email delivery.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>6. Data Retention &amp; Deletion Rights</h2>
+        <p>
+          You retain complete control over your subscription data:
+        </p>
+        <ul>
+          <li>
+            <strong>Instant Deletion via Bot:</strong> Sending <code>/unsubscribe &lt;uuid&gt;</code> in Telegram, by Email, or in Discord immediately deletes your destination target from our database.
+          </li>
+          <li>
+            <strong>Manual Request:</strong> You may request complete erasure of your chat ID or email address from our records by emailing <a href="mailto:privacy@mehrnet.com" style="color:var(--accent);">privacy@mehrnet.com</a>.
+          </li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>7. Security Practices</h2>
+        <p>
+          All API communication is strictly encrypted using TLS 1.3. Telegram webhooks are verified using secret token headers, Discord interactions are cryptographically authenticated via Ed25519 digital signatures, and outgoing mail is encrypted via SSL/TLS on Port 465.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>8. Contact Us</h2>
+        <p>
+          For questions or data privacy requests, contact our privacy team at:
+          <br>
+          <a href="mailto:privacy@mehrnet.com" style="color:var(--accent);">privacy@mehrnet.com</a>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>mehrnotify</strong> &bull; Multi-channel notification service by <a href="https://mehrnet.com" target="_blank" rel="noopener" style="color:var(--text-main);">mehrnet</a>
+      </div>
+      <div class="footer-links">
+        <a href="/tos">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="https://gateway.mehrnet.com" target="_blank" rel="noopener">Mehr Gateway</a>
+        <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener">Telegram Bot</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
