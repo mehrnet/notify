@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mehr Notify | Instant Gateway &amp; RSS Alerts</title>
-  <meta name="description" content="Instant multi-channel notifications for Mehr Gateway crypto payments, invoices, and RSS/Atom feeds delivered directly to Telegram.">
+  <title>Mehr Notify | Multi-Channel Notification Hub</title>
+  <meta name="description" content="Instant multi-channel notifications for the Mehrnet ecosystem delivered directly to Telegram and Email.">
   <meta name="author" content="Mehrnet">
-  <meta name="theme-color" content="#080c10">
+  <meta name="theme-color" content="#0c0f12">
+
+  <!-- Prevent Theme Flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem("mehr_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", t);
+      var l = localStorage.getItem("mehr_locale") || "en";
+      document.documentElement.setAttribute("lang", l);
+      document.documentElement.setAttribute("dir", l === "fa" ? "rtl" : "ltr");
+    })();
+  </script>
 
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://notify.mehrnet.com">
-  <meta property="og:title" content="Mehr Notify | Real-Time Multi-Channel Notification Service">
-  <meta property="og:description" content="Subscribe to on-chain crypto payment events and RSS feeds with instant Telegram alerts.">
+  <meta property="og:title" content="Mehr Notify | Real-Time Multi-Channel Notification Network">
+  <meta property="og:description" content="Subscribe to events across the Mehrnet ecosystem with instant alerts delivered via Telegram and Email.">
   <meta property="og:site_name" content="Mehr Notify">
 
   <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -24,222 +36,534 @@
   <!-- Navigation -->
   <header class="nav">
     <div class="nav-container">
-      <a href="/" class="nav-brand" aria-label="Mehr Notify Home">
-        <div class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#FFC107">
-            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
-          </svg>
-        </div>
-        <div class="brand-text">
+      <a href="/" class="nav-brand" aria-label="Mehr Notify by mehrnet">
+        <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFC107" aria-hidden="true">
+          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+        </svg>
+        <span class="brand-text">
           <span class="brand-mark">mehr<span class="brand-accent">notify</span></span>
           <span class="brand-sub">by mehrnet</span>
-        </div>
+        </span>
       </a>
 
-      <nav class="nav-links">
-        <a href="#commands" class="nav-link">Commands</a>
-        <a href="#features" class="nav-link">Features</a>
-        <a href="#how-it-works" class="nav-link">How It Works</a>
-        <a href="/tos" class="nav-link">Terms</a>
-        <a href="/privacy" class="nav-link">Privacy</a>
-        <a href="https://gateway.mehrnet.com" target="_blank" rel="noopener" class="nav-link">Mehr Gateway</a>
-        <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="nav-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.941z"/>
-          </svg>
-          <span>Open Bot</span>
+      <nav id="public-nav-items" class="nav-center" aria-label="Public navigation">
+        <a href="#home" class="active">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#home"></use></svg>
+          <span data-i18n="nav.home">Home</span>
+        </a>
+        <a href="#telegram">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#telegram"></use></svg>
+          <span data-i18n="nav.telegram">Telegram</span>
+        </a>
+        <a href="#email">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#mail"></use></svg>
+          <span data-i18n="nav.email">Email</span>
+        </a>
+        <a href="#commands">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#terminal"></use></svg>
+          <span data-i18n="nav.commands">Commands</span>
+        </a>
+        <a href="/tos">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#shield"></use></svg>
+          <span data-i18n="nav.terms">Terms</span>
+        </a>
+        <a href="/privacy">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#lock"></use></svg>
+          <span data-i18n="nav.privacy">Privacy</span>
         </a>
       </nav>
+
+      <div class="nav-right">
+        <!-- Theme / Language Dropdown (Gateway-style, no account switcher) -->
+        <div class="custom-dropdown" data-menu-root>
+          <button
+            type="button"
+            class="pref-compact-trigger"
+            data-dropdown-toggle
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-label="Theme: Dark; Language: English"
+            title="Dark · English"
+          >
+            <span class="pref-trigger-combo">
+              <svg class="icon pref-theme-icon" data-pref-theme-icon viewBox="0 0 24 24" aria-hidden="true">
+                <use href="/icons.svg#moon"></use>
+              </svg>
+              <span class="pref-pipe" aria-hidden="true">|</span>
+              <svg class="icon pref-flag pref-lang-icon" data-pref-lang-icon viewBox="0 0 24 24" aria-hidden="true">
+                <use href="/icons.svg#flag-us"></use>
+              </svg>
+            </span>
+            <svg class="icon select-caret" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="/icons.svg#chevron-down"></use>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu" role="dialog" aria-label="Preferences">
+            <section class="form-group">
+              <span class="form-hint" data-i18n="pref.theme">Theme</span>
+              <div class="theme-grid">
+                <button type="button" class="theme-btn" data-theme-val="light" aria-pressed="false">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#sun"></use></svg>
+                  <span data-i18n="theme.light">Light</span>
+                </button>
+                <button type="button" class="theme-btn active" data-theme-val="dark" aria-pressed="true">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#moon"></use></svg>
+                  <span data-i18n="theme.dark">Dark</span>
+                </button>
+                <button type="button" class="theme-btn" data-theme-val="black" aria-pressed="false">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#contrast"></use></svg>
+                  <span data-i18n="theme.black">Black</span>
+                </button>
+              </div>
+            </section>
+
+            <section class="form-group" style="margin-top: 0.75rem;">
+              <span class="form-hint" data-i18n="pref.language">Language</span>
+              <div class="lang-grid">
+                <button type="button" class="lang-btn active" data-lang-val="en" aria-pressed="true">
+                  <svg class="icon pref-flag" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#flag-us"></use></svg>
+                  <span>English</span>
+                </button>
+                <button type="button" class="lang-btn" data-lang-val="fa" aria-pressed="false">
+                  <svg class="icon pref-flag" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#flag-ir"></use></svg>
+                  <span>فارسی</span>
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Main Content -->
   <main>
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
       <div class="container">
-        <div class="hero-badge">⚡ Sub-Second Notification Service</div>
-        <h1 class="hero-title">Instant Alerts for <span>Gateway &amp; Feeds</span></h1>
-        <p class="hero-lead">
-          Connect your Mehr Gateway API token or RSS/Atom feeds to receive instant crypto payment and publishing alerts directly inside Telegram.
+        <div class="hero-badge" data-i18n="hero.badge">⚡ Multi-Channel Notification Network</div>
+        <h1 class="hero-title" data-i18n="hero.title">Unified Real-Time Alerts for Mehrnet</h1>
+        <p class="hero-lead" data-i18n="hero.lead">
+          Instant, self-custodial event notifications delivered straight to Telegram and Email. Connect your services, feeds, and apps with unified commands.
         </p>
         <div class="hero-actions">
           <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="primary-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.196 1.006.128.832.941z"/>
-            </svg>
-            <span>Start @MehrNotifyBot</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="/icons.svg#telegram"></use></svg>
+            <span data-i18n="hero.btn_tg">Telegram Bot (@MehrNotifyBot)</span>
+          </a>
+          <a href="mailto:notify@mehrnet.com" class="secondary-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#mail"></use></svg>
+            <span data-i18n="hero.btn_email">Email Bot (notify@mehrnet.com)</span>
           </a>
           <a href="#commands" class="secondary-btn">
-            <span>View Commands</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#terminal"></use></svg>
+            <span data-i18n="hero.btn_commands">View Commands</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Terminal Commands -->
-    <section class="terminal-section" id="commands">
-      <div class="container">
-        <div class="terminal-card">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="terminal-dot red"></span>
-              <span class="terminal-dot yellow"></span>
-              <span class="terminal-dot green"></span>
-            </div>
-            <div class="terminal-title">telegram // @MehrNotifyBot</div>
-            <div style="width: 40px;"></div>
-          </div>
-          <div class="terminal-body">
-            <div class="cmd-group">
-              <span class="cmd-label">Subscribe to Mehr Gateway Account</span>
-              <div class="cmd-row">
-                <code class="cmd-code">
-                  <span class="kw">/sub gateway</span> 123456789:abcdefghijklmnopqrstuvwxyz
-                </code>
-                <button class="cmd-copy" data-copy="/sub gateway 123456789:abcdefghijklmnopqrstuvwxyz" title="Copy command">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  <span>Copy</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="cmd-group">
-              <span class="cmd-label">Subscribe to RSS / Atom Feed</span>
-              <div class="cmd-row">
-                <code class="cmd-code">
-                  <span class="kw">/sub rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
-                </code>
-                <button class="cmd-copy" data-copy="/sub rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy command">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  <span>Copy</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="cmd-group">
-              <span class="cmd-label">Unsubscribe by Type &amp; UUID</span>
-              <div class="cmd-row">
-                <code class="cmd-code">
-                  <span class="kw">/unsub gateway</span> e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d
-                </code>
-                <button class="cmd-copy" data-copy="/unsub gateway e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d" title="Copy command">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  <span>Copy</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="cmd-group">
-              <span class="cmd-label">Interactive Prompt Mode</span>
-              <div class="cmd-row">
-                <code class="cmd-code" style="color: #94a3b8;">
-                  Send <span class="kw">/sub gateway</span> alone to enter prompt mode with <span style="color:#ef4444;">/cancel</span>
-                </code>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section class="features-section" id="features">
+    <!-- Supported Services Section -->
+    <section class="section" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Core Capabilities</span>
-          <h2 class="section-title">Engineered for Instant Delivery</h2>
-          <p class="section-desc">Reliable notification dispatching built on Cloudflare Workers edge architecture.</p>
+          <span class="section-label" data-i18n="services.label">Supported Subscription Types</span>
+          <h2 class="section-title" data-i18n="services.title">Ecosystem Integrations</h2>
+          <p class="section-desc" data-i18n="services.desc">
+            Easily subscribe to events across the Mehrnet network and beyond. More services are continuously added.
+          </p>
         </div>
 
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
+        <div class="services-grid">
+          <!-- Gateway Service Card -->
+          <div class="service-card">
+            <div class="service-head">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <span class="service-badge live">Live Type</span>
             </div>
-            <h3 class="feature-title">On-Chain Settlement Alerts</h3>
-            <p class="feature-text">Sub-second webhook updates when payments settle on Ethereum, BNB Smart Chain, Solana, TON, and TRON.</p>
+            <h3 class="service-title" data-i18n="services.gateway_title">Mehr Gateway (gateway)</h3>
+            <p class="service-desc" data-i18n="services.gateway_desc">
+              Real-time on-chain crypto payment settlements, invoices, and checkout events on EVM, BSC, Solana, TON, and TRON.
+            </p>
+            <div class="service-meta">
+              <span><strong data-i18n="services.gateway_type">Type: gateway</strong></span>
+              <span><span data-i18n="services.gateway_arg">Arg: Account API Token</span> (<code>123456789:...</code>)</span>
+            </div>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 11a9 9 0 0 1 9 9"></path>
-                <path d="M4 4a16 16 0 0 1 16 16"></path>
-                <circle cx="5" cy="19" r="1"></circle>
-              </svg>
+          <!-- RSS Service Card -->
+          <div class="service-card">
+            <div class="service-head">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 11a9 9 0 0 1 9 9"></path>
+                  <path d="M4 4a16 16 0 0 1 16 16"></path>
+                  <circle cx="5" cy="19" r="1"></circle>
+                </svg>
+              </div>
+              <span class="service-badge live">Live Type</span>
             </div>
-            <h3 class="feature-title">RSS &amp; Atom Monitoring</h3>
-            <p class="feature-text">Subscribe to any GitHub release feed, blog, or news channel to receive updates the moment new content drops.</p>
+            <h3 class="service-title" data-i18n="services.rss_title">Feeds &amp; Releases (rss)</h3>
+            <p class="service-desc" data-i18n="services.rss_desc">
+              Sub-second RSS and Atom feed monitoring for GitHub releases, software version updates, blogs, and announcements.
+            </p>
+            <div class="service-meta">
+              <span><strong data-i18n="services.rss_type">Type: rss</strong></span>
+              <span><span data-i18n="services.rss_arg">Arg: Feed URL</span> (<code>https://...</code>)</span>
+            </div>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
+          <!-- Upcoming Services Card -->
+          <div class="service-card">
+            <div class="service-head">
+              <div class="service-icon" style="background: var(--surface-overlay); color: var(--text-secondary);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+              <span class="service-badge" data-i18n="services.more_badge">In Development</span>
             </div>
-            <h3 class="feature-title">Multi-Target Deduplication</h3>
-            <p class="feature-text">One webhook UUID per service key. Multiple chats and team members can subscribe to the same account seamlessly.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
+            <h3 class="service-title" data-i18n="services.more_title">More Mehrnet Services</h3>
+            <p class="service-desc" data-i18n="services.more_desc">
+              Upcoming integrations for Mehr Radar uptime monitoring, Mehr Rates exchange triggers, and ecosystem telemetry.
+            </p>
+            <div class="service-meta">
+              <span>Future Types: <code>radar</code>, <code>rates</code>, ...</span>
+              <span>Unified command syntax across all future services.</span>
             </div>
-            <h3 class="feature-title">Self-Custodial &amp; Zero-Leak</h3>
-            <p class="feature-text">Automated webhook registration with Mehr Gateway without exposing secret keys or sensitive account data.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Preview Message -->
-    <section class="preview-section">
+    <!-- Telegram Bot Documentation Section -->
+    <section class="section" id="telegram">
       <div class="container">
-        <div class="preview-wrap">
-          <div class="preview-copy">
-            <span class="preview-badge">Live Preview</span>
-            <h2 class="preview-heading">What You'll Receive in Telegram</h2>
-            <p class="preview-lead">
-              Every on-chain event contains critical details: invoice ID, payable amount, token symbol, customer order ID, and transaction hashes.
-            </p>
-            <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="primary-btn">
-              <span>Try with @MehrNotifyBot</span>
-            </a>
+        <div class="section-header">
+          <span class="section-label" data-i18n="tg.section_label">Telegram Integration</span>
+          <h2 class="section-title" data-i18n="tg.section_title">Control Everything via @MehrNotifyBot</h2>
+          <p class="section-desc" data-i18n="tg.section_desc">
+            Full two-way command bot with interactive paginated menus, step-by-step prompts, and instant webhook delivery.
+          </p>
+        </div>
+
+        <div class="bot-docs-layout">
+          <!-- Features Info -->
+          <div class="bot-info-card">
+            <div class="bot-info-header">
+              <div class="bot-avatar">
+                <svg viewBox="0 0 24 24" fill="currentColor"><use href="/icons.svg#telegram"></use></svg>
+              </div>
+              <div class="bot-name-wrap">
+                <h3>Mehr Notify</h3>
+                <span class="bot-handle">@MehrNotifyBot</span>
+              </div>
+            </div>
+
+            <div class="bot-feature-list">
+              <div class="bot-feature-item">
+                <div class="bot-feature-bullet">
+                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                </div>
+                <div class="bot-feature-text">
+                  <strong data-i18n="tg.feature1_title">Interactive Subscription Menu</strong>
+                  <p data-i18n="tg.feature1_desc">Run /subscriptions to view active subscriptions with live status, pagination, and one-tap Delete buttons.</p>
+                </div>
+              </div>
+
+              <div class="bot-feature-item">
+                <div class="bot-feature-bullet">
+                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                </div>
+                <div class="bot-feature-text">
+                  <strong data-i18n="tg.feature2_title">Smart Message Lifecycle</strong>
+                  <p data-i18n="tg.feature2_desc">In-place menu editing for recent messages (&lt;10 min) keeps your chat clean without endless notification spam.</p>
+                </div>
+              </div>
+
+              <div class="bot-feature-item">
+                <div class="bot-feature-bullet">
+                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                </div>
+                <div class="bot-feature-text">
+                  <strong data-i18n="tg.feature3_title">Auto-Detection &amp; Prompt Mode</strong>
+                  <p data-i18n="tg.feature3_desc">Send a token directly for auto-subscription, or run /sub gateway without args to enter step-by-step guided mode.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 1rem;">
+              <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="primary-btn" style="width: 100%; justify-content: center;">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><use href="/icons.svg#telegram"></use></svg>
+                <span>Launch @MehrNotifyBot</span>
+              </a>
+            </div>
           </div>
 
-          <div class="tg-bubble-card">
+          <!-- Telegram Commands Terminal -->
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <div class="terminal-title">telegram // @MehrNotifyBot</div>
+              <div style="width: 40px;"></div>
+            </div>
+            <div class="terminal-body">
+              <div class="cmd-group">
+                <span class="cmd-label">Subscribe to Mehr Gateway</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/sub gateway</span> 123456789:abcdefghijklmnopqrstuvwxyz
+                  </code>
+                  <button class="cmd-copy" data-copy="/sub gateway 123456789:abcdefghijklmnopqrstuvwxyz" title="Copy command">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="cmd-group">
+                <span class="cmd-label">Subscribe to RSS / Atom Feed</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/sub rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
+                  </code>
+                  <button class="cmd-copy" data-copy="/sub rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy command">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="cmd-group">
+                <span class="cmd-label">Open Interactive Subscriptions Menu</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/subscriptions</span> <span class="subtle">(or /sub)</span>
+                  </code>
+                  <button class="cmd-copy" data-copy="/subscriptions" title="Copy command">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="cmd-group">
+                <span class="cmd-label">Unsubscribe Command (Type &amp; UUID/Arg)</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/unsub gateway</span> e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d
+                  </code>
+                  <button class="cmd-copy" data-copy="/unsub gateway e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d" title="Copy command">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="cmd-group">
+                <span class="cmd-label">Guided Prompt Mode</span>
+                <div class="cmd-row">
+                  <code class="cmd-code" style="color: var(--text-dim);">
+                    Send <span class="kw">/sub gateway</span> alone &rarr; reply with token or <span style="color:#ef4444;">/cancel</span>
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Bot Documentation Section -->
+    <section class="section" id="email">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" data-i18n="email.section_label">Email Integration</span>
+          <h2 class="section-title" data-i18n="email.section_title">Command-Driven Email Automation</h2>
+          <p class="section-desc" data-i18n="email.section_desc">
+            Operate notification feeds directly from your inbox at notify@mehrnet.com with standard email threading.
+          </p>
+        </div>
+
+        <div class="bot-docs-layout">
+          <!-- Features Info -->
+          <div class="bot-info-card">
+            <div class="bot-info-header">
+              <div class="bot-avatar">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#mail"></use></svg>
+              </div>
+              <div class="bot-name-wrap">
+                <h3>Email Gateway</h3>
+                <span class="bot-handle">notify@mehrnet.com</span>
+              </div>
+            </div>
+
+            <div class="bot-feature-list">
+              <div class="bot-feature-item">
+                <div class="bot-feature-bullet">
+                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                </div>
+                <div class="bot-feature-text">
+                  <strong data-i18n="email.feature1_title">Subject or Body Commands</strong>
+                  <p data-i18n="email.feature1_desc">Send commands like /sub, /unsub, /subscriptions, or /help in the email Subject line or the email Body.</p>
+                </div>
+              </div>
+
+              <div class="bot-feature-item">
+                <div class="bot-feature-bullet">
+                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                </div>
+                <div class="bot-feature-text">
+                  <strong data-i18n="email.feature2_title">RFC Threading &amp; Nested Quoting</strong>
+                  <p data-i18n="email.feature2_desc">All bot responses use In-Reply-To and References headers with standard &gt; quoting for nested conversation history.</p>
+                </div>
+              </div>
+
+              <div class="bot-feature-item">
+                <div class="bot-feature-bullet">
+                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                </div>
+                <div class="bot-feature-text">
+                  <strong data-i18n="email.feature3_title">Direct Event Notifications</strong>
+                  <p data-i18n="email.feature3_desc">Receive beautiful, responsive HTML and plain-text payment receipts and feed alerts delivered to your inbox.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 1rem;">
+              <a href="mailto:notify@mehrnet.com" class="secondary-btn" style="width: 100%; justify-content: center;">
+                <svg class="btn-icon" viewBox="0 0 24 24"><use href="/icons.svg#mail"></use></svg>
+                <span>Compose Email to notify@mehrnet.com</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Email Commands Terminal -->
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <div class="terminal-title">email // notify@mehrnet.com</div>
+              <div style="width: 40px;"></div>
+            </div>
+            <div class="terminal-body">
+              <div class="cmd-group">
+                <span class="cmd-label">Subject: Subscribe to Gateway</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/sub gateway</span> 123456789:abcdefghijklmnopqrstuvwxyz
+                  </code>
+                  <button class="cmd-copy" data-copy="/sub gateway 123456789:abcdefghijklmnopqrstuvwxyz" title="Copy subject">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="cmd-group">
+                <span class="cmd-label">Subject: Subscribe to RSS Feed</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/sub rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
+                  </code>
+                  <button class="cmd-copy" data-copy="/sub rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy subject">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="cmd-group">
+                <span class="cmd-label">Subject: List Active Subscriptions</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/subscriptions</span> <span class="subtle">(Replies with active UUIDs)</span>
+                  </code>
+                  <button class="cmd-copy" data-copy="/subscriptions" title="Copy subject">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="cmd-group">
+                <span class="cmd-label">Subject: Unsubscribe from Feed</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/unsub rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
+                  </code>
+                  <button class="cmd-copy" data-copy="/unsub rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy subject">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="cmd-group">
+                <span class="cmd-label">Subject: Get Help &amp; Syntax Guide</span>
+                <div class="cmd-row">
+                  <code class="cmd-code">
+                    <span class="kw">/help</span>
+                  </code>
+                  <button class="cmd-copy" data-copy="/help" title="Copy subject">
+                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Preview Section -->
+    <section class="section" id="preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" data-i18n="preview.section_label">Live Output</span>
+          <h2 class="section-title" data-i18n="preview.section_title">What Your Alerts Look Like</h2>
+        </div>
+
+        <div class="preview-tabs">
+          <button type="button" class="preview-tab-btn active" data-preview-tab="telegram">
+            <svg class="icon" viewBox="0 0 24 24"><use href="/icons.svg#telegram"></use></svg>
+            <span data-i18n="preview.tg_tab">Telegram Alert</span>
+          </button>
+          <button type="button" class="preview-tab-btn" data-preview-tab="email">
+            <svg class="icon" viewBox="0 0 24 24"><use href="/icons.svg#mail"></use></svg>
+            <span data-i18n="preview.email_tab">Email Alert</span>
+          </button>
+        </div>
+
+        <div class="preview-display-card">
+          <!-- Telegram Bubble Preview -->
+          <div id="preview-telegram" class="tg-bubble-card">
             <div class="tg-bubble-header">
               <div class="tg-bot-avatar">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><use href="/icons.svg#bell"></use></svg>
               </div>
               <div class="tg-bot-info">
-                <span class="tg-bot-name">Mehr Notify 🔔 مهر نوتیفای</span>
-                <span class="tg-bot-handle">bot</span>
+                <span class="tg-bot-name">Mehr Notify</span>
+                <span class="tg-bot-handle">@MehrNotifyBot</span>
               </div>
             </div>
             <div class="tg-bubble-body">
-              💰 <strong>Payment Received!</strong><br>
+              💰 <strong>Payment Settled!</strong><br>
               ━━━━━━━━━━━━━━━━━━━━━<br>
               🧾 <strong>Invoice:</strong> <code>#1084</code><br>
               💵 <strong>Amount:</strong> <strong>10.00 USDT</strong><br>
@@ -251,64 +575,141 @@
             </div>
             <div class="tg-bubble-footer">
               <a href="https://gateway.mehrnet.com" target="_blank" rel="noopener" class="tg-bubble-btn">
-                👉 View Invoice Details
+                👉 View Invoice on Gateway
               </a>
+            </div>
+          </div>
+
+          <!-- Email Preview Card -->
+          <div id="preview-email" class="email-preview-card hidden">
+            <div class="email-client-bar">
+              <div class="email-meta-row">
+                <span class="email-meta-label">From:</span>
+                <span class="email-meta-val">Mehr Notify &lt;notify@mehrnet.com&gt;</span>
+              </div>
+              <div class="email-meta-row">
+                <span class="email-meta-label">Subject:</span>
+                <span class="email-meta-val">[Settled] Invoice #1084 - 10.00 USDT</span>
+              </div>
+              <div class="email-meta-row">
+                <span class="email-meta-label">In-Reply:</span>
+                <span class="email-meta-val">&lt;user-msg-992@client.local&gt;</span>
+              </div>
+            </div>
+            <div class="email-body-content">
+              <div class="email-quote-block">
+                &gt; /sub gateway 123456789:abcdefghijklmnopqrstuvwxyz
+              </div>
+              <p>
+                <strong>Subscription Confirmed</strong><br>
+                Your email is now receiving alerts for Mehr Gateway account <code>root</code>.
+              </p>
+              <div style="background: var(--surface-overlay); padding: 0.75rem; border-radius: 0.5rem; font-family: var(--font-mono); font-size: 0.8rem;">
+                Subscription UUID: <code>e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d</code><br>
+                Channel: Email (notify@mehrnet.com)<br>
+                Status: Active
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- How It Works Steps -->
-    <section class="steps-section" id="how-it-works">
+    <!-- Unified Command Syntax Reference Table -->
+    <section class="section" id="commands">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Quick Start</span>
-          <h2 class="section-title">Setup in Under 30 Seconds</h2>
+          <span class="section-label" data-i18n="cmd.section_label">Quick Reference</span>
+          <h2 class="section-title" data-i18n="cmd.section_title">Unified Command Syntax</h2>
+          <p class="section-desc" data-i18n="cmd.section_desc">
+            Identical syntax works across both Telegram and Email channels.
+          </p>
         </div>
 
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-num">01</div>
-            <h3 class="step-title">Open Telegram Bot</h3>
-            <p class="step-text">Search for <code>@MehrNotifyBot</code> in Telegram or click the Open Bot link.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-num">02</div>
-            <h3 class="step-title">Send Your Token or Feed</h3>
-            <p class="step-text">Send <code>/gateway &lt;API_KEY&gt;</code> or <code>/rss &lt;URL&gt;</code> directly in chat.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-num">03</div>
-            <h3 class="step-title">Receive Instant Alerts</h3>
-            <p class="step-text">Our worker automatically configures the webhook and starts dispatching updates.</p>
-          </div>
+        <div class="cmd-table-wrap">
+          <table class="cmd-table">
+            <thead>
+              <tr>
+                <th>Command</th>
+                <th>Arguments</th>
+                <th>Channels</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>/sub &lt;type&gt; &lt;arg&gt;</code></td>
+                <td>Type: <code>gateway | rss</code><br>Arg: API token or Feed URL</td>
+                <td>
+                  <span class="channel-pill both">Telegram + Email</span>
+                </td>
+                <td>Creates a new notification subscription.</td>
+              </tr>
+              <tr>
+                <td><code>/unsub &lt;type&gt; &lt;arg&gt;</code></td>
+                <td>Type: <code>gateway | rss</code><br>Arg: UUID, Token, or Feed URL</td>
+                <td>
+                  <span class="channel-pill both">Telegram + Email</span>
+                </td>
+                <td>Removes the subscription and terminates webhooks.</td>
+              </tr>
+              <tr>
+                <td><code>/subscriptions</code></td>
+                <td><em>(None)</em></td>
+                <td>
+                  <span class="channel-pill both">Telegram + Email</span>
+                </td>
+                <td>Lists active subscriptions with status and delete controls.</td>
+              </tr>
+              <tr>
+                <td><code>/help</code></td>
+                <td><em>(None)</em></td>
+                <td>
+                  <span class="channel-pill both">Telegram + Email</span>
+                </td>
+                <td>Displays syntax help, supported types, and examples.</td>
+              </tr>
+              <tr>
+                <td><code>/cancel</code></td>
+                <td><em>(None)</em></td>
+                <td>
+                  <span class="channel-pill">Telegram only</span>
+                </td>
+                <td>Aborts an active step-by-step interactive prompt.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>mehrnotify</strong> · Self-custodial notification service by <a href="https://mehrnet.com" target="_blank" rel="noopener" style="color:var(--text-main);">mehrnet</a>
-      </div>
-      <div class="footer-links">
-        <a href="/tos">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="https://gateway.mehrnet.com" target="_blank" rel="noopener">Mehr Gateway</a>
-        <a href="https://rates.mehrnet.com" target="_blank" rel="noopener">Mehr Rates</a>
-        <a href="https://radar.mehrnet.com" target="_blank" rel="noopener">Mehr Radar</a>
-        <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener">Telegram Bot</a>
-      </div>
-    </div>
-  </footer>
+  <!-- Mobile Bottom Navigation -->
+  <nav class="bottom-nav" id="public-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#home" class="active">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#home"></use></svg>
+      <span data-i18n="nav.home">Home</span>
+    </a>
+    <a href="#telegram">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#telegram"></use></svg>
+      <span data-i18n="nav.telegram">Telegram</span>
+    </a>
+    <a href="#email">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#mail"></use></svg>
+      <span data-i18n="nav.email">Email</span>
+    </a>
+    <a href="#commands">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#terminal"></use></svg>
+      <span data-i18n="nav.commands">Commands</span>
+    </a>
+    <a href="/tos">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#shield"></use></svg>
+      <span data-i18n="nav.terms">Terms</span>
+    </a>
+  </nav>
 
-  <!-- Toast for Copy -->
-  <div class="toast" id="toast">Copied to clipboard!</div>
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite">Copied to clipboard!</div>
 
   <script src="/app.js"></script>
 </body>

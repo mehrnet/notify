@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
-  <rect width="24" height="24" rx="4" fill="#FFC107" />
-  <path d="M12 20c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V2c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 3.36 6 5.92 6 9v5l-2 2v1h16v-1l-2-2z" fill="#FFFFFF" transform="translate(0, 2)" />
+  <mask id="bell-cutout">
+    <rect width="24" height="24" rx="4" fill="#ffffff" />
+    <path d="M12 20c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V2c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 3.36 6 5.92 6 9v5l-2 2v1h16v-1l-2-2z" fill="#000000" transform="translate(0, 2)" />
+  </mask>
+  <rect width="24" height="24" rx="4" fill="#FFC107" mask="url(#bell-cutout)" />
 </svg>
