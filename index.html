@@ -144,10 +144,6 @@
             <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#mail"></use></svg>
             <span data-i18n="hero.btn_email">Email Bot (notify@mehrnet.com)</span>
           </a>
-          <a href="#commands" class="secondary-btn">
-            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#terminal"></use></svg>
-            <span data-i18n="hero.btn_commands">View Commands</span>
-          </a>
         </div>
       </div>
     </section>
@@ -231,288 +227,93 @@
       </div>
     </section>
 
-    <!-- Telegram Bot Documentation Section -->
-    <section class="section" id="telegram">
+    <!-- Delivery Channels Section -->
+    <section class="section" id="channels">
       <div class="container">
         <div class="section-header">
-          <span class="section-label" data-i18n="tg.section_label">Telegram Integration</span>
-          <h2 class="section-title" data-i18n="tg.section_title">Control Everything via @MehrNotifyBot</h2>
-          <p class="section-desc" data-i18n="tg.section_desc">
-            Full two-way command bot with interactive paginated menus, step-by-step prompts, and instant webhook delivery.
+          <span class="section-label" data-i18n="channels.section_label">Delivery Channels</span>
+          <h2 class="section-title" data-i18n="channels.section_title">Two Ways to Receive &amp; Manage Alerts</h2>
+          <p class="section-desc" data-i18n="channels.section_desc">
+            Choose your preferred channel. Both support identical unified command syntax and instant push notifications.
           </p>
         </div>
 
-        <div class="bot-docs-layout">
-          <!-- Features Info -->
-          <div class="bot-info-card">
-            <div class="bot-info-header">
+        <div class="channels-grid">
+          <!-- Telegram Bot Card -->
+          <div class="channel-card">
+            <div class="channel-card-header">
               <div class="bot-avatar">
                 <svg viewBox="0 0 24 24" fill="currentColor"><use href="/icons.svg#telegram"></use></svg>
               </div>
               <div class="bot-name-wrap">
-                <h3>Mehr Notify</h3>
+                <div class="channel-title-row">
+                  <h3 data-i18n="channels.tg_title">Telegram</h3>
+                  <span class="channel-tag live" data-i18n="channels.tg_tag">Instant Push</span>
+                </div>
                 <span class="bot-handle">@MehrNotifyBot</span>
               </div>
             </div>
-
-            <div class="bot-feature-list">
-              <div class="bot-feature-item">
-                <div class="bot-feature-bullet">
-                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
-                </div>
-                <div class="bot-feature-text">
-                  <strong data-i18n="tg.feature1_title">Interactive Subscription Menu</strong>
-                  <p data-i18n="tg.feature1_desc">Run /subscriptions to view active subscriptions with live status, pagination, and one-tap Delete buttons.</p>
-                </div>
-              </div>
-
-              <div class="bot-feature-item">
-                <div class="bot-feature-bullet">
-                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
-                </div>
-                <div class="bot-feature-text">
-                  <strong data-i18n="tg.feature2_title">Smart Message Lifecycle</strong>
-                  <p data-i18n="tg.feature2_desc">In-place menu editing for recent messages (&lt;10 min) keeps your chat clean without endless notification spam.</p>
-                </div>
-              </div>
-
-              <div class="bot-feature-item">
-                <div class="bot-feature-bullet">
-                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
-                </div>
-                <div class="bot-feature-text">
-                  <strong data-i18n="tg.feature3_title">Auto-Detection &amp; Prompt Mode</strong>
-                  <p data-i18n="tg.feature3_desc">Send a token directly for auto-subscription, or run /sub gateway without args to enter step-by-step guided mode.</p>
-                </div>
-              </div>
-            </div>
-
-            <div style="margin-top: auto; padding-top: 1rem;">
+            <p class="channel-summary" data-i18n="channels.tg_summary">
+              Interactive bot with inline action buttons, in-place menu updates, and step-by-step guided prompts.
+            </p>
+            <ul class="channel-highlights">
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                <span data-i18n="channels.tg_h1">Interactive /subscriptions menu with one-tap delete</span>
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                <span data-i18n="channels.tg_h2">Smart in-place editing keeps your chat history clean</span>
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                <span data-i18n="channels.tg_h3">Sub-second webhook delivery for invoices and releases</span>
+              </li>
+            </ul>
+            <div class="channel-card-action">
               <a href="https://t.me/MehrNotifyBot" target="_blank" rel="noopener" class="primary-btn" style="width: 100%; justify-content: center;">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><use href="/icons.svg#telegram"></use></svg>
-                <span>Launch @MehrNotifyBot</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="/icons.svg#telegram"></use></svg>
+                <span data-i18n="channels.tg_btn">Open @MehrNotifyBot</span>
               </a>
             </div>
           </div>
 
-          <!-- Telegram Commands Terminal -->
-          <div class="terminal-card">
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-              </div>
-              <div class="terminal-title">telegram // @MehrNotifyBot</div>
-              <div style="width: 40px;"></div>
-            </div>
-            <div class="terminal-body">
-              <div class="cmd-group">
-                <span class="cmd-label">Subscribe to Mehr Gateway</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/sub gateway</span> 123456789:abcdefghijklmnopqrstuvwxyz
-                  </code>
-                  <button class="cmd-copy" data-copy="/sub gateway 123456789:abcdefghijklmnopqrstuvwxyz" title="Copy command">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="cmd-group">
-                <span class="cmd-label">Subscribe to RSS / Atom Feed</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/sub rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
-                  </code>
-                  <button class="cmd-copy" data-copy="/sub rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy command">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="cmd-group">
-                <span class="cmd-label">Open Interactive Subscriptions Menu</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/subscriptions</span> <span class="subtle">(or /sub)</span>
-                  </code>
-                  <button class="cmd-copy" data-copy="/subscriptions" title="Copy command">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="cmd-group">
-                <span class="cmd-label">Unsubscribe Command (Type &amp; UUID/Arg)</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/unsub gateway</span> e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d
-                  </code>
-                  <button class="cmd-copy" data-copy="/unsub gateway e8d72d03-b4b2-4227-a6f9-cf906e4ecb8d" title="Copy command">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="cmd-group">
-                <span class="cmd-label">Guided Prompt Mode</span>
-                <div class="cmd-row">
-                  <code class="cmd-code" style="color: var(--text-dim);">
-                    Send <span class="kw">/sub gateway</span> alone &rarr; reply with token or <span style="color:#ef4444;">/cancel</span>
-                  </code>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Email Bot Documentation Section -->
-    <section class="section" id="email">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label" data-i18n="email.section_label">Email Integration</span>
-          <h2 class="section-title" data-i18n="email.section_title">Command-Driven Email Automation</h2>
-          <p class="section-desc" data-i18n="email.section_desc">
-            Operate notification feeds directly from your inbox at notify@mehrnet.com with standard email threading.
-          </p>
-        </div>
-
-        <div class="bot-docs-layout">
-          <!-- Features Info -->
-          <div class="bot-info-card">
-            <div class="bot-info-header">
+          <!-- Email Gateway Card -->
+          <div class="channel-card">
+            <div class="channel-card-header">
               <div class="bot-avatar">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#mail"></use></svg>
               </div>
               <div class="bot-name-wrap">
-                <h3>Email Gateway</h3>
+                <div class="channel-title-row">
+                  <h3 data-i18n="channels.email_title">Email</h3>
+                  <span class="channel-tag" data-i18n="channels.email_tag">Zero Setup</span>
+                </div>
                 <span class="bot-handle">notify@mehrnet.com</span>
               </div>
             </div>
-
-            <div class="bot-feature-list">
-              <div class="bot-feature-item">
-                <div class="bot-feature-bullet">
-                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
-                </div>
-                <div class="bot-feature-text">
-                  <strong data-i18n="email.feature1_title">Subject or Body Commands</strong>
-                  <p data-i18n="email.feature1_desc">Send commands like /sub, /unsub, /subscriptions, or /help in the email Subject line or the email Body.</p>
-                </div>
-              </div>
-
-              <div class="bot-feature-item">
-                <div class="bot-feature-bullet">
-                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
-                </div>
-                <div class="bot-feature-text">
-                  <strong data-i18n="email.feature2_title">RFC Threading &amp; Nested Quoting</strong>
-                  <p data-i18n="email.feature2_desc">All bot responses use In-Reply-To and References headers with standard &gt; quoting for nested conversation history.</p>
-                </div>
-              </div>
-
-              <div class="bot-feature-item">
-                <div class="bot-feature-bullet">
-                  <svg viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
-                </div>
-                <div class="bot-feature-text">
-                  <strong data-i18n="email.feature3_title">Direct Event Notifications</strong>
-                  <p data-i18n="email.feature3_desc">Receive beautiful, responsive HTML and plain-text payment receipts and feed alerts delivered to your inbox.</p>
-                </div>
-              </div>
-            </div>
-
-            <div style="margin-top: auto; padding-top: 1rem;">
+            <p class="channel-summary" data-i18n="channels.email_summary">
+              Operate notification feeds directly from any email client with standard message threading and receipts.
+            </p>
+            <ul class="channel-highlights">
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                <span data-i18n="channels.email_h1">Send commands in email Subject line or Body</span>
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                <span data-i18n="channels.email_h2">RFC threading (In-Reply-To) with quoted conversation history</span>
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24"><use href="/icons.svg#check"></use></svg>
+                <span data-i18n="channels.email_h3">Clean HTML and plain-text payment &amp; release receipts</span>
+              </li>
+            </ul>
+            <div class="channel-card-action">
               <a href="mailto:notify@mehrnet.com" class="secondary-btn" style="width: 100%; justify-content: center;">
-                <svg class="btn-icon" viewBox="0 0 24 24"><use href="/icons.svg#mail"></use></svg>
-                <span>Compose Email to notify@mehrnet.com</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#mail"></use></svg>
+                <span data-i18n="channels.email_btn">Email notify@mehrnet.com</span>
               </a>
-            </div>
-          </div>
-
-          <!-- Email Commands Terminal -->
-          <div class="terminal-card">
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-              </div>
-              <div class="terminal-title">email // notify@mehrnet.com</div>
-              <div style="width: 40px;"></div>
-            </div>
-            <div class="terminal-body">
-              <div class="cmd-group">
-                <span class="cmd-label">Subject: Subscribe to Gateway</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/sub gateway</span> 123456789:abcdefghijklmnopqrstuvwxyz
-                  </code>
-                  <button class="cmd-copy" data-copy="/sub gateway 123456789:abcdefghijklmnopqrstuvwxyz" title="Copy subject">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="cmd-group">
-                <span class="cmd-label">Subject: Subscribe to RSS Feed</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/sub rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
-                  </code>
-                  <button class="cmd-copy" data-copy="/sub rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy subject">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="cmd-group">
-                <span class="cmd-label">Subject: List Active Subscriptions</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/subscriptions</span> <span class="subtle">(Replies with active UUIDs)</span>
-                  </code>
-                  <button class="cmd-copy" data-copy="/subscriptions" title="Copy subject">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="cmd-group">
-                <span class="cmd-label">Subject: Unsubscribe from Feed</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/unsub rss</span> https://github.com/mehrnet/mehrnet.com/releases.atom
-                  </code>
-                  <button class="cmd-copy" data-copy="/unsub rss https://github.com/mehrnet/mehrnet.com/releases.atom" title="Copy subject">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="cmd-group">
-                <span class="cmd-label">Subject: Get Help &amp; Syntax Guide</span>
-                <div class="cmd-row">
-                  <code class="cmd-code">
-                    <span class="kw">/help</span>
-                  </code>
-                  <button class="cmd-copy" data-copy="/help" title="Copy subject">
-                    <svg viewBox="0 0 24 24"><use href="/icons.svg#copy"></use></svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -551,20 +352,25 @@
               </div>
             </div>
             <div class="tg-bubble-body">
-              💰 <strong>Payment Settled!</strong><br>
-              ━━━━━━━━━━━━━━━━━━━━━<br>
-              🧾 <strong>Invoice:</strong> <code>#1084</code><br>
-              💵 <strong>Amount:</strong> <strong>10.00 USDT</strong><br>
-              🏷️ <strong>Order ID:</strong> <code>order_9981</code><br>
-              📦 <strong>Title:</strong> Store Checkout<br>
-              ⛓️ <strong>Settlement:</strong> BEP20 · BNB Smart Chain<br>
-              🔗 <strong>Tx Hash:</strong> <code>0x9d4a...e12f</code><br><br>
-              👤 <em>Account: root</em>
+              📰 <strong>New RSS Feed Update</strong><br><br>
+              📖 <strong>Feed:</strong> Mehrnet Releases<br>
+              ♥️ <strong>Title:</strong> v2.4.0 — Unified Notification Engine<br>
+              ✏️ <strong>Author:</strong> MehrWizard<br>
+              🤩 <strong>Published:</strong> 2026-09-19 14:30 UTC<br><br>
+              📰 Production release of multi-channel notification engine with sub-second delivery.
             </div>
             <div class="tg-bubble-footer">
-              <a href="https://gateway.mehrnet.com" target="_blank" rel="noopener" class="tg-bubble-btn">
-                👉 View Invoice on Gateway
+              <a href="https://github.com/mehrnet" target="_blank" rel="noopener" class="tg-bubble-btn tg-btn-primary">
+                🟧 View Update / Release
               </a>
+              <div class="tg-btn-row">
+                <span class="tg-bubble-btn tg-btn-secondary">
+                  👁 View Subscription
+                </span>
+                <span class="tg-bubble-btn tg-btn-secondary tg-btn-danger">
+                  🗑 Delete Subscription
+                </span>
+              </div>
             </div>
           </div>
 
