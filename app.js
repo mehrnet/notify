@@ -316,7 +316,7 @@
     });
 
     // Active bottom-nav and nav-center highlight based on scroll
-    const sections = ["home", "services", "telegram", "email", "commands"];
+    const sections = ["home"];
     const navLinks = document.querySelectorAll(".nav-center a, .bottom-nav a");
 
     window.addEventListener("scroll", () => {
