@@ -168,7 +168,7 @@
                   <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                 </svg>
               </div>
-              <span class="service-badge live">Live Type</span>
+              <span class="service-badge live" data-i18n="services.live_badge">Live Type</span>
             </div>
             <h3 class="service-title" data-i18n="services.gateway_title">Mehr Gateway (gateway)</h3>
             <p class="service-desc" data-i18n="services.gateway_desc">
@@ -177,6 +177,30 @@
             <div class="service-meta">
               <span><strong data-i18n="services.gateway_type">Type: gateway</strong></span>
               <span><span data-i18n="services.gateway_arg">Arg: Account API Token</span> (<code>123456789:...</code>)</span>
+            </div>
+          </div>
+
+          <!-- Miyan Service Card -->
+          <div class="service-card">
+            <div class="service-head">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3 4.5 7.25v9.5L12 21l7.5-4.25v-9.5L12 3Z"></path>
+                  <path d="m8 9.25 4 2.25 4-2.25M12 11.5V16"></path>
+                  <circle cx="12" cy="16.5" r="1.25"></circle>
+                </svg>
+              </div>
+              <span class="service-badge live" data-i18n="services.live_badge">Live Type</span>
+            </div>
+            <h3 class="service-title" data-i18n="services.miyan_title">Miyan (miyan)</h3>
+            <p class="service-desc" data-i18n="services.miyan_desc">
+              Account, deployment, and billing notifications, plus root-only platform and system alerts from Miyan.
+            </p>
+            <div class="service-meta">
+              <span><strong data-i18n="services.miyan_type">Type: miyan</strong></span>
+              <span><span data-i18n="services.miyan_arg">Arg: Account API Token</span> (<code>account-token</code>)</span>
+              <span><span data-i18n="services.command">Subscribe:</span> <code>/sub miyan &lt;account-token&gt;</code></span>
+              <span><span data-i18n="services.remove">Unsubscribe:</span> <code>/unsub miyan &lt;uuid-or-token&gt;</code></span>
             </div>
           </div>
 
@@ -190,7 +214,7 @@
                   <circle cx="5" cy="19" r="1"></circle>
                 </svg>
               </div>
-              <span class="service-badge live">Live Type</span>
+              <span class="service-badge live" data-i18n="services.live_badge">Live Type</span>
             </div>
             <h3 class="service-title" data-i18n="services.rss_title">Feeds &amp; Releases (rss)</h3>
             <p class="service-desc" data-i18n="services.rss_desc">
@@ -433,25 +457,41 @@
             <tbody>
               <tr>
                 <td><code>/sub &lt;type&gt; &lt;arg&gt;</code></td>
-                <td>Type: <code>gateway | rss</code><br>Arg: API token or Feed URL</td>
+                <td><span data-i18n="cmd.type_label">Type:</span> <code>gateway | miyan | rss</code><br><span data-i18n="cmd.sub_arg">Arg: API token or Feed URL</span></td>
                 <td>
-                  <span class="channel-pill both">Telegram + Email</span>
+                  <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
                 </td>
                 <td>Creates a new notification subscription.</td>
               </tr>
               <tr>
-                <td><code>/unsub &lt;type&gt; &lt;arg&gt;</code></td>
-                <td>Type: <code>gateway | rss</code><br>Arg: UUID, Token, or Feed URL</td>
+                <td><code>/sub miyan &lt;account-token&gt;</code></td>
+                <td data-i18n="cmd.miyan_sub_arg">Miyan Account API Token</td>
                 <td>
-                  <span class="channel-pill both">Telegram + Email</span>
+                  <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
+                </td>
+                <td data-i18n="cmd.miyan_sub_desc">Subscribes this channel to Miyan account, deployment, billing, and eligible platform/system alerts.</td>
+              </tr>
+              <tr>
+                <td><code>/unsub &lt;type&gt; &lt;arg&gt;</code></td>
+                <td><span data-i18n="cmd.type_label">Type:</span> <code>gateway | miyan | rss</code><br><span data-i18n="cmd.unsub_arg">Arg: UUID, Token, or Feed URL</span></td>
+                <td>
+                  <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
                 </td>
                 <td>Removes the subscription and terminates webhooks.</td>
+              </tr>
+              <tr>
+                <td><code>/unsub miyan &lt;uuid-or-token&gt;</code></td>
+                <td data-i18n="cmd.miyan_unsub_arg">Subscription UUID or Miyan account token</td>
+                <td>
+                  <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
+                </td>
+                <td data-i18n="cmd.miyan_unsub_desc">Removes the Miyan subscription and terminates its webhook.</td>
               </tr>
               <tr>
                 <td><code>/subscriptions</code></td>
                 <td><em>(None)</em></td>
                 <td>
-                  <span class="channel-pill both">Telegram + Email</span>
+                  <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
                 </td>
                 <td>Lists active subscriptions with status and delete controls.</td>
               </tr>
@@ -459,7 +499,7 @@
                 <td><code>/help</code></td>
                 <td><em>(None)</em></td>
                 <td>
-                  <span class="channel-pill both">Telegram + Email</span>
+                  <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
                 </td>
                 <td>Displays syntax help, supported types, and examples.</td>
               </tr>

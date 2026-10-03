@@ -18,6 +18,8 @@ The official web portal and documentation for **Mehr Notify** — a real-time, m
   - `light`: `#fdfbf7` clean warm background with `#d97706` amber accent.
 - **Bilingual & RTL**: Seamless toggle between English (LTR) and Persian (RTL with Vazirmatn typography).
 - **Bot Documentation & Live Previews**: Interactive guides for both Telegram and Email bots with practical examples and copyable command snippets.
+- **Live Subscription Types**: Mehr Gateway (`gateway`), Miyan account events (`miyan`), and RSS/Atom feeds (`rss`).
+- **Miyan Alerts**: Subscribe from Telegram or Email with `/sub miyan <account-token>` and disconnect with `/unsub miyan <uuid-or-token>`.
 - **Unified Command System**: Consistent `/sub`, `/unsub`, and `/subscriptions` syntax across all channels.
 - **Zero Framework Overhead**: Ultra-fast, lightweight vanilla HTML5, CSS3, and JavaScript hosted on Cloudflare Workers static assets.
 
