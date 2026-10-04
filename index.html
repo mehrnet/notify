@@ -204,6 +204,31 @@
             </div>
           </div>
 
+          <!-- MehrSwap Service Card -->
+          <div class="service-card">
+            <div class="service-head">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 3l4 4-4 4"></path>
+                  <path d="M20 7H4"></path>
+                  <path d="M8 21l-4-4 4-4"></path>
+                  <path d="M4 17h16"></path>
+                </svg>
+              </div>
+              <span class="service-badge live" data-i18n="services.live_badge">Live Type</span>
+            </div>
+            <h3 class="service-title" data-i18n="services.mehrswap_title">MehrSwap (mehrswap)</h3>
+            <p class="service-desc" data-i18n="services.mehrswap_desc">
+              Real-time crypto swap orders, margin earnings, withdrawals, and balance updates across 20+ aggregators.
+            </p>
+            <div class="service-meta">
+              <span><strong data-i18n="services.mehrswap_type">Type: mehrswap</strong></span>
+              <span><span data-i18n="services.mehrswap_arg">Arg: Account API Token</span> (<code>1000000001:...</code>)</span>
+              <span><span data-i18n="services.command">Subscribe:</span> <code>/sub mehrswap &lt;account-token&gt;</code></span>
+              <span><span data-i18n="services.remove">Unsubscribe:</span> <code>/unsub mehrswap &lt;uuid-or-token&gt;</code></span>
+            </div>
+          </div>
+
           <!-- RSS Service Card -->
           <div class="service-card">
             <div class="service-head">
@@ -457,7 +482,7 @@
             <tbody>
               <tr>
                 <td><code>/sub &lt;type&gt; &lt;arg&gt;</code></td>
-                <td><span data-i18n="cmd.type_label">Type:</span> <code>gateway | miyan | rss</code><br><span data-i18n="cmd.sub_arg">Arg: API token or Feed URL</span></td>
+                <td><span data-i18n="cmd.type_label">Type:</span> <code>gateway | miyan | mehrswap | rss</code><br><span data-i18n="cmd.sub_arg">Arg: API token or Feed URL</span></td>
                 <td>
                   <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
                 </td>
@@ -472,8 +497,16 @@
                 <td data-i18n="cmd.miyan_sub_desc">Subscribes this channel to Miyan account, deployment, billing, and eligible platform/system alerts.</td>
               </tr>
               <tr>
+                <td><code>/sub mehrswap &lt;account-token&gt;</code></td>
+                <td data-i18n="cmd.mehrswap_sub_arg">MehrSwap Account API Token</td>
+                <td>
+                  <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
+                </td>
+                <td data-i18n="cmd.mehrswap_sub_desc">Subscribes this channel to MehrSwap orders, finished swaps, margin earnings, and withdrawals.</td>
+              </tr>
+              <tr>
                 <td><code>/unsub &lt;type&gt; &lt;arg&gt;</code></td>
-                <td><span data-i18n="cmd.type_label">Type:</span> <code>gateway | miyan | rss</code><br><span data-i18n="cmd.unsub_arg">Arg: UUID, Token, or Feed URL</span></td>
+                <td><span data-i18n="cmd.type_label">Type:</span> <code>gateway | miyan | mehrswap | rss</code><br><span data-i18n="cmd.unsub_arg">Arg: UUID, Token, or Feed URL</span></td>
                 <td>
                   <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
                 </td>
@@ -486,6 +519,14 @@
                   <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
                 </td>
                 <td data-i18n="cmd.miyan_unsub_desc">Removes the Miyan subscription and terminates its webhook.</td>
+              </tr>
+              <tr>
+                <td><code>/unsub mehrswap &lt;uuid-or-token&gt;</code></td>
+                <td data-i18n="cmd.mehrswap_unsub_arg">Subscription UUID or MehrSwap account token</td>
+                <td>
+                  <span class="channel-pill both" data-i18n="cmd.both_channels">Telegram + Email</span>
+                </td>
+                <td data-i18n="cmd.mehrswap_unsub_desc">Removes the MehrSwap subscription and terminates its webhook.</td>
               </tr>
               <tr>
                 <td><code>/subscriptions</code></td>
